@@ -40,7 +40,7 @@ namespace csharpCamadas.API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Ocorrou o um erro na busca error: " + ex);
+                return BadRequest("Ocorrou o um erro na busca, error: " + ex);
             }
         }
 
