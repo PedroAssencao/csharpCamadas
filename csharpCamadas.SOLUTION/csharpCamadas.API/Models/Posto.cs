@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace csharpCamadas.API.Models
@@ -30,7 +29,7 @@ namespace csharpCamadas.API.Models
         [StringLength(255)]
         [Unicode(false)]
         public string? PosEndereco { get; set; }
-    
+
         [InverseProperty(nameof(TiposDeCombustivel.Pos))]
         public virtual ICollection<TiposDeCombustivel> TiposDeCombustivels { get; set; }
     }

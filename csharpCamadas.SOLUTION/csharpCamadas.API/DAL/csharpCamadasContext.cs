@@ -35,37 +35,37 @@ namespace csharpCamadas.API.DAL
             modelBuilder.Entity<Motoristum>(entity =>
             {
                 entity.HasKey(e => e.MotId)
-                    .HasName("PK__Motorist__E07522412C8A3E11");
+                    .HasName("PK__Motorist__E0752241BCD10E26");
 
                 entity.HasOne(d => d.Vei)
                     .WithMany(p => p.Motorista)
                     .HasForeignKey(d => d.VeiId)
                     .OnDelete(DeleteBehavior.SetNull)
-                    .HasConstraintName("FK__Motorista__vei_i__3B75D760");
+                    .HasConstraintName("FK__Motorista__vei_i__286302EC");
             });
 
             modelBuilder.Entity<Posto>(entity =>
             {
                 entity.HasKey(e => e.PosId)
-                    .HasName("PK__Posto__D1A4EB12C32FF375");
+                    .HasName("PK__Posto__D1A4EB1218119F5C");
             });
 
             modelBuilder.Entity<TiposDeCombustivel>(entity =>
             {
                 entity.HasKey(e => e.TipoId)
-                    .HasName("PK__TiposDeC__94F920015F4EA5B6");
+                    .HasName("PK__TiposDeC__94F920011E35D731");
 
                 entity.HasOne(d => d.Pos)
                     .WithMany(p => p.TiposDeCombustivels)
                     .HasForeignKey(d => d.PosId)
                     .OnDelete(DeleteBehavior.Cascade)
-                    .HasConstraintName("FK__TiposDeCo__pos_i__3E52440B");
+                    .HasConstraintName("FK__TiposDeCo__pos_i__2B3F6F97");
             });
 
             modelBuilder.Entity<Veiculo>(entity =>
             {
                 entity.HasKey(e => e.VeiId)
-                    .HasName("PK__Veiculo__136D0F565894C0F5");
+                    .HasName("PK__Veiculo__136D0F563BBE0B6D");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -31,8 +31,6 @@ vei_id int FOREIGN KEY REFERENCES Veiculo(vei_id) ON DELETE SET NULL
 
 insert Motorista(mot_nome, mot_idade, vei_id) values ('Carlos', '18', 1)
 
-select * from posto
-
 create table TiposDeCombustivel(
 Tipo_id int primary key identity(1,1),
 Tipo_nome varchar(255),
@@ -40,4 +38,4 @@ Tipo_valor float,
 pos_id int FOREIGN KEY REFERENCES Posto(pos_id) ON DELETE CASCADE
 )
 
-insert TiposDeCombustivel(Tipo_nome, Tipo_valor,Tipo_endereco,pos_id) values ('Diesel', 23,'tupiguarini', 1)
+insert TiposDeCombustivel(Tipo_nome, Tipo_valor,pos_id) values ('Diesel', 23, 1)

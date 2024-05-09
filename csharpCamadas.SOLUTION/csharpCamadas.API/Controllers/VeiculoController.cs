@@ -44,5 +44,52 @@ namespace csharpCamadas.API.Controllers
             }
         }
 
+        [HttpPost("/Veiculos/Create")]
+        public async Task<IActionResult> AdicionarVeiculos(Veiculo Model)
+        {
+            try
+            {
+                await _context.AddAsync(Model);
+                await _context.SaveChangesAsync();
+                return Ok("Veiculo Adicionado");
+            }
+            catch (Exception)
+            {
+                return BadRequest("Veiculo Não Adicionado");
+            }
+        }
+
+        [HttpPut("/Veiculos/Atualizar")]
+        public async Task<IActionResult> AtualizarVeiculo(Veiculo Model)
+        {
+            try
+            {
+                _context.Update(Model);
+                await _context.SaveChangesAsync();
+                return Ok("Veiculo Atualizao");
+            }
+            catch (Exception)
+            {
+                return BadRequest("Veiculo Não Atualizado");
+            }
+        }
+
+
+        [HttpDelete("/Veiculos/Remove/{id}")]
+        public async Task<IActionResult> ApagarVeiculos(int id)
+        {
+            try
+            {
+                var Model = await _context.Set<Veiculo>().FindAsync(id);
+                _context.Remove(Model);
+                await _context.SaveChangesAsync();
+                return Ok("Veiculo Apagado");
+            }
+            catch (Exception)
+            {
+                return BadRequest("Veiculo Não Apagado");
+            }
+        }
+
     }
 }

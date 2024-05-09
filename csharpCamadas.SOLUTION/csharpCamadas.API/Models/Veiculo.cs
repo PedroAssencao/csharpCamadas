@@ -26,7 +26,6 @@ namespace csharpCamadas.API.Models
         [StringLength(255)]
         [Unicode(false)]
         public string? VeiPlaca { get; set; }
-
         [JsonIgnore]
         [InverseProperty(nameof(Motoristum.Vei))]
         public virtual ICollection<Motoristum> Motorista { get; set; }

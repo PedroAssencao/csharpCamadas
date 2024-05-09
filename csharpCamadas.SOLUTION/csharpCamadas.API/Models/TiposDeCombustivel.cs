@@ -19,13 +19,8 @@ namespace csharpCamadas.API.Models
         public string? TipoNome { get; set; }
         [Column("Tipo_valor")]
         public double? TipoValor { get; set; }
-        [Column("Tipo_endereco")]
-        [StringLength(255)]
-        [Unicode(false)]
-        public string? TipoEndereco { get; set; }
         [Column("pos_id")]
         public int? PosId { get; set; }
-
         [JsonIgnore]
         [ForeignKey(nameof(PosId))]
         [InverseProperty(nameof(Posto.TiposDeCombustivels))]
